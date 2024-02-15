@@ -1,0 +1,27 @@
+/* $_POST / $_SESSION / ARRAY MANIPULATIONS @ferrekevin - 2024 */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("assets/imgs/bg.jpeg") no-repeat;
+  background-size: cover;
+  background-position: right;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+}

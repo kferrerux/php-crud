@@ -27,7 +27,6 @@
     <?php include('display.php');
 
     // var_dump($_SESSION['cars']);
-
     // NOTES DIVERSES
     // POUR AJOUTER UN ELEMENT AU TABLEAU ON UTILISE LA METHODE PUSH
     // POUR SUPPRIMER UN ELEMENT DU TABLEAU ON UTILISE LA METHODE UNSET (SELECTION PAR SON INDEX)
@@ -42,9 +41,9 @@
 
   </div>
 
-  <form class="sticky-top w-100 d-flex flex-column justify-content-center align-items-center" style="margin-top: 5%;" action="./post_return.php" method="POST">
+  <form action="post_return.php" method="POST" enctype="multipart/form-data class=" sticky-top w-100 d-flex flex-column justify-content-center align-items-center" style="margin-top: 5%;"">
 
-    <label class="fw-bold" for="">MODELE DU VEHICULE</label>
+    <label class=" fw-bold" for="">MODELE DU VEHICULE</label>
     <input class="border-0 rounded bg-light w-50" type="text" id="model" name="model"><br>
 
     <label class="fw-bold" for="">STOCK</label>
@@ -53,12 +52,19 @@
     <label class="fw-bold" for="">VENDU</label>
     <input class="border-0 rounded bg-light w-50" type="number" id="vendu" name="vendu"><br>
 
-    <label class="fw-bold" for="">IMAGE</label>
+    <label class="fw-bold" for="">ADRESSE (URL) DE L'IMAGE</label>
     <input class="border-0 rounded bg-light w-50" type="text" id="image" name="image"><br>
+
+    <!-- UPLOAD DE L'IMAGE -->
+
+    <div class="text-center upload">
+      <label class="fw-bold my-3" for="">IMAGE DEPUIS VOTRE ORDINATEUR</label><br>
+      <input type="file" name="upimage" id="upimage" accept=".jpg, .jpeg, .png, .gif, .webp, .svg" class="border-0 w-100"><br>
+    </div>
 
     <button type="submit" class="rounded my-3 w-50 btn btn-success fw-bold">AJOUTER UN VEHICULE</button>
 
-    <a class="rounded my-3 w-50 btn btn-secondary fw-bold" href="./database.php">INITIALISER OU REINITIALISER LA SESSION</a>
+    <a href="./database.php" class="rounded my-3 w-50 btn btn-secondary fw-bold">INITIALISER OU REINITIALISER LA SESSION</a>
 
   </form>
 

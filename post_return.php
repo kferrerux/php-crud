@@ -31,11 +31,19 @@
     $stock =  $_POST['stock'];
     $vendu =  $_POST['vendu'];
     $image =  $_POST['image'];
+    $upimage = $_POST['upimage'];
 
     // LA NOUVELLE ENTREE (NOUVEAU TABLEAU)
-    $voitures = array("id" => $lastId + 1, "model" => $model, "vendu" => $vendu, "stock" => $stock, "image" => $image);
+    $voitures = array(
+        "id" => $lastId + 1,
+        "model" => $model,
+        "vendu" => $vendu,
+        "stock" => $stock,
+        "image" => $image,
+        "upimage" => $upimage
+    );
 
-    // var_dump($voitures);
+    // var_dump($voitures['upimage']);
 
     // ON MET A JOUR LE TABLEAU AVEC LA METHOD ARRAY_PUSH
     array_push($_SESSION['cars'], $voitures);

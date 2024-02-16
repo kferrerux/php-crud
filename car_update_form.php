@@ -17,11 +17,12 @@
 
     // FORMULAIRE PERMETTANT DE METTRE A JOUR UN VEHICULE
     session_start();
-    $id = $_GET['id'];
+
+    // $id = $_GET['id'];
     // echo $id;
     ?>
 
-    <form class="sticky-top w-50 d-flex flex-column justify-content-center align-items-center" style="margin-top: 5%;" action="./update.php" method="POST">
+    <form class="sticky-top w-50 d-flex flex-column justify-content-center align-items-center" style="margin-top: 5%;" action="./update.php" method="POST" enctype="multipart/form-data">
 
         <input type="text" name="id" value="<?= $id; ?>" hidden>
 
@@ -36,6 +37,13 @@
 
         <label class="fw-bold" for="">IMAGE</label>
         <input class="border-1 rounded bg-light w-50" type="text" id="image" name="image"><br>
+
+        <!-- UPLOAD DE L'IMAGE -->
+
+        <div class="text-center upload">
+            <label class="fw-bold my-3" for="">IMAGE</label><br>
+            <input type="file" name="upimage" id="upimage" accept=".jpg, .jpeg, .png, .gif, .webp, .svg"><br>
+        </div>
 
         <button type="submit" class="rounded my-3 w-50 btn btn-success fw-bold">CONFIRMATION LES MODIFICATIONS</button>
         <a class="rounded my-3 w-50 btn btn-danger fw-bold" href="./index.php">ANNULER LES MODIFICATIONS</a>

@@ -22,7 +22,14 @@
     // var_dump($_POST);
     // die();
 
-    $updateArray = array("id" => $_POST['id'], "model" => $_POST['model'], "vendu" => $_POST['vendu'], "stock" => $_POST['stock'], "image" => $_POST['image']);
+    $updateArray = array(
+        "id" => $_POST['id'],
+        "model" => $_POST['model'],
+        "vendu" => $_POST['vendu'],
+        "stock" => $_POST['stock'],
+        "image" => $_POST['image'],
+        "upimage" => $_POST['upimage']
+    );
 
     foreach ($_SESSION['cars'] as $car) {
         if ($car['id'] == $_POST['id']) {

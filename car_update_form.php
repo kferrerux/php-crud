@@ -13,16 +13,17 @@
 
 <body class="vh-100 d-flex flex-column justify-content-center align-items-center bg-dark text-white">
     <img class="position-absolute top-0 start-0" style="margin-left: 1%; margin-top: 1%; width: 3%" src="assets/imgs/phplogo.png" alt="PHP LOGO">
+
     <?php
 
     // FORMULAIRE PERMETTANT DE METTRE A JOUR UN VEHICULE
     session_start();
 
-    // $id = $_GET['id'];
+    $id = $_GET['id'];
     // echo $id;
     ?>
 
-    <form class="sticky-top w-50 d-flex flex-column justify-content-center align-items-center" style="margin-top: 5%;" action="./update.php" method="POST" enctype="multipart/form-data">
+    <form method="POST" enctype="multipart/form-data" action="./pdo_update.php" class="sticky-top w-50 d-flex flex-column justify-content-center align-items-center" style="margin-top: 5%;">
 
         <input type="text" name="id" value="<?= $id; ?>" hidden>
 

@@ -15,43 +15,85 @@
     <?php
 
     // LA PAGE DE TRAITEMENT ($_POST)
-    session_start();
+    // session_start();
 
-    // var_dump($_SESSION['cars']);
-    // var_dump($_SESSION['cars'][3]['id']);
-    // var_dump($_POST);
+
+    // CONNEXION PDO
+    try {
+
+        $db = new PDO("mysql: host=localhost; dbname=cars", "root", "EdenManon.");
+        echo "<strong>Connexion à la base de donnée effectuée</strong>";
+    } catch (PDOException $e) {
+        echo "Erreur de connexion : " . $e->getMessage();
+    }
+
+    /* CONNEXION MYSQLI
+    ------------------*/
+    // $mysqli = mysqli_connect("localhost", "root", "EdenManon.", "cars");
+
+
+    // RECUPERATION DES DONNEES DU FORMULAIRES
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $model =  $_POST['model'];
+        $stock =  $_POST['stock'];
+        $vendu =  $_POST['vendu'];
+        $image =  $_POST['image'];
+        $upimage = $_POST['upimage'];
+
+        // PDO 
+        // INSERT
+        $sql = "INSERT INTO car (model, vendu, stock, image) VALUES (?,?,?,?)";
+        $stmt = $db->prepare($sql);
+        $stmt->execute([$model, $stock, $vendu, $image]);
+
+        // PDO 
+        /* FETCH (voir display.php)
+        ---------------------------*/
+        // $stmt = $db->prepare("SELECT * FROM car");
+        // $stmt->execute();
+        // $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // PDO
+        /* UPDATE (voir pdo.php)
+        ---------------------------*/
+        // $sql = "UPDATE car SET vendu = ? WHERE id = ?";
+        // $stmt = $db->prepare($sql);
+        // $stmt->execute([$vendu]);
+
+        // INSERT MYSQLI
+        // $sqlInsert  = "INSERT INTO car (model, vendu, stock, image) VALUES ('$model', '$vendu', '$stock', '$image')";
+        // mysqli_query($mysqli, $sql);
+
+        echo "<br>";
+        echo "<h2>Les données ont été mises à jour.</h2>";
+        echo "<br>";
+        echo "<hr class='opacity-50 w-50 border-2 border-primary border rounded'>";
+        echo "<a class='btn btn-secondary fw-bold' href='index.php'>RETOUR AU FORMULAIRE (INDEX)</a>";
+    }
 
     // ON DYNAMISE L'AFFICHAGE DE L'ID
-    $lastElement = end($_SESSION['cars']);
-    $lastId = $lastElement['id'];
+    // $lastElement = end($_SESSION['cars']);
+    // $lastId = $lastElement['id'];
     // var_dump($lastId);
 
     // LES VARIABLES RECUPEREES DU FORMULAIRE ($_POST)
-    $model =  $_POST['model'];
-    $stock =  $_POST['stock'];
-    $vendu =  $_POST['vendu'];
-    $image =  $_POST['image'];
-    $upimage = $_POST['upimage'];
+
 
     // LA NOUVELLE ENTREE (NOUVEAU TABLEAU)
-    $voitures = array(
-        "id" => $lastId + 1,
-        "model" => $model,
-        "vendu" => $vendu,
-        "stock" => $stock,
-        "image" => $image,
-        "upimage" => $upimage
-    );
+    // $voitures = array(
+    //     "id" => $lastId + 1,
+    //     "model" => $model,
+    //     "vendu" => $vendu,
+    //     "stock" => $stock,
+    //     "image" => $image,
+    //     "upimage" => $upimage
+    // );
 
     // var_dump($voitures['upimage']);
 
     // ON MET A JOUR LE TABLEAU AVEC LA METHOD ARRAY_PUSH
-    array_push($_SESSION['cars'], $voitures);
-    echo "<br>";
-    echo "<h2>Les données ont été mises à jour.</h2>";
-    echo "<br>";
-    echo "<hr class='opacity-50 w-50 border-2 border-primary border rounded'>";
-    echo "<a class='btn btn-secondary fw-bold' href='index.php'>RETOUR AU FORMULAIRE (INDEX)</a>";
+    // array_push($_SESSION['cars'], $voitures);
+
 
     // var_dump($_SESSION['cars']);
     // die;

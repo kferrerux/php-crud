@@ -50,7 +50,6 @@ function addClass(element, regex, value) {
     element.classList.add("is-invalid");
   }
 }
-
 // On va venir ajouter un écouteur d'évènement de type 'input' sur le champ concerné
 //---------------------------------------------------------------------------------
 // Evènement sur le champ inputNom

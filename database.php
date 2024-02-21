@@ -15,7 +15,7 @@
     <?php
 
     // DEMARRAGE DE LA SESSION
-    session_start();
+    // session_start();
 
     // INITIALISATION D'UN TABLEAU QUI SERA CONTENU DANS LA SUPER GLOBALE $_SESSION
     $_SESSION['cars'] = array(

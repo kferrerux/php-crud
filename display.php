@@ -10,7 +10,7 @@
 
 /* AFFICHAGE PDO
 ---------------*/
-$db = new PDO("mysql: host=localhost; dbname=cars", "root", "EdenManon.");
+$db = new PDO("mysql: host=localhost; dbname=cars", "root", "");
 $stmt = $db->prepare("SELECT * FROM car");
 $stmt->execute();
 $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);

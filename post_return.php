@@ -21,7 +21,7 @@
     // CONNEXION PDO
     try {
 
-        $db = new PDO("mysql: host=localhost; dbname=cars", "root", "EdenManon.");
+        $db = new PDO("mysql: host=localhost; dbname=cars", "root", "");
         echo "<strong>Connexion à la base de donnée effectuée</strong>";
     } catch (PDOException $e) {
         echo "Erreur de connexion : " . $e->getMessage();

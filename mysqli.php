@@ -3,7 +3,7 @@
 
 // $mysqli = mysqli_connect("localhost", "root", "EdenManon.", "cars");
 
-$mysqli = mysqli_connect("localhost", "root", "EdenManon.", "cars");
+$mysqli = mysqli_connect("localhost", "root", "", "cars");
 // ON DEFINIT UNE CONDITION PERMETTANT DE S'ASSUERER QUE LA CONNEXION A ETE EFFECTUEE
 if ($mysqli) {
     echo "connected";

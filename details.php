@@ -20,7 +20,7 @@
     // RECUPERATION DES DONNEES DU FORMULAIRES
     $id = $_GET['id'];
 
-    $db = new PDO("mysql: host=localhost; dbname=cars", "root", "EdenManon.");
+    $db = new PDO("mysql: host=localhost; dbname=cars", "root", "");
     $stmt = $db->prepare("SELECT * FROM car WHERE id = $id");
     $stmt->execute();
     $cars = $stmt->fetchAll(PDO::FETCH_ASSOC);

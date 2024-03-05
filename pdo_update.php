@@ -30,7 +30,7 @@
     /* UPDATE
     --------*/
     try {
-        $db = new PDO("mysql: host=localhost; dbname=cars", "root", "EdenManon.");
+        $db = new PDO("mysql: host=localhost; dbname=cars", "root", "");
 
         // REQUETE
         $sql = "UPDATE car SET model = '$model', vendu = $vendu, stock = $stock, image = '$image' WHERE id = $id";

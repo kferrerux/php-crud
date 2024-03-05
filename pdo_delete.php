@@ -4,7 +4,7 @@
 /* UPDATE
 --------*/
 try {
-    $db = new PDO("mysql: host=localhost; dbname=cars", "root", "EdenManon.");
+    $db = new PDO("mysql: host=localhost; dbname=cars", "root", "");
 
     // RECUPERATION DE L'ID DEPUIS LE FORMULAIRE
     $id = $_GET['id'];
